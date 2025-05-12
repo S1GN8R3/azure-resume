@@ -179,6 +179,47 @@ ul#nav li a {
 	transition: color .2s ease-in-out;
 }
 
+/* Mobile Optimization for Certifications & About */
+@media screen and (max-width: 768px) {
+  .cert-item .twelve.columns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-item img {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  #about .profile-pic {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .three.columns,
+  .nine.columns.main-col {
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #resume h3 {
+    font-size: 20px;
+  }
+
+  #resume .info {
+    font-size: 16px;
+  }
+}
+
+
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
 
