@@ -21,16 +21,18 @@
       <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
       <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
       <ul id="nav" class="nav">
-        <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-        <li><a class="smoothscroll" href="#about">About</a></li>
-        <li><a class="smoothscroll" href="#resume">Resume</a></li>
-      </ul>
+  <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+  <li><a class="smoothscroll" href="#about">About</a></li>
+  <li><a class="smoothscroll" href="#resume">Resume</a></li>
+  <li><a href="https://www.linkedin.com/in/tzac" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+</ul>
     </nav>
 
     <div class="row banner">
       <div class="banner-text">
         <h1 class="responsive-headline">Hi, I'm Zac</h1>
-        <p>This resume has been viewed <a id="counter"></a> times — thanks for visiting.</p>
+        <p style="font-size: 1.2em; color: #ffffff;">
+  This resume has been viewed <a id="counter" style="color: #ffffff;"></a> times — thanks for visiting.</p>
         <ul class="social">
           <li><a href="https://www.linkedin.com/in/tzac"><i class="fa fa-linkedin"></i></a></li>
         </ul>
@@ -42,104 +44,202 @@
     </p>
   </header>
 
-  <section id="about">
-    <div class="row">
-      <div class="three columns">
-        <img class="profile-pic" src="images/me.png" alt="Zac Stevens" />
+  <<!--
+<p style="text-align: center; margin-top: 20px;">
+  <a class="button" href="Stevens,Thomas_May12_2025.pdf" target="_blank" style="font-size: 16px; padding: 10px 20px; background-color: #11ABB0; color: white; text-decoration: none; border-radius: 5px;">
+    📄 Download Resume (PDF)
+  </a>
+</p>
+-->
+>
+
+  <div class="row" style="display: flex; align-items: center;">
+  <div class="three columns" style="display: flex; justify-content: center; align-items: center;">
+    <img class="profile-pic" src="images/me.jpg" alt="Zac Stevens" style="width: 200px; height: auto;" />
+  </div>
+  <div class="nine columns main-col">
+    <h2 style="color: #ffffff;">ABOUT ME</h2>
+    <p style="font-size: 1.2em; color: #ffffff;">
+      I’m Zac Stevens — a Cybersecurity Technologist, retired U.S. Marine Chief Warrant Officer, and Microsoft Fellow. Over 20 years of experience leading cross-functional cyber teams, managing enterprise risk, and modernizing digital systems in high-impact operational environments.
+      <br><br>
+      I built this resume site as part of the Cloud Resume Challenge to demonstrate my ability to deploy cloud-native, secure, automated solutions. The site is hosted via Azure Static Web Apps, integrated with serverless Azure Functions and Cosmos DB, and version-controlled through GitHub Actions CI/CD.
+    </p>
+  </div>
+</div>
+
+
+  <section id="resume">
+   
+
+    <!-- Clearance -->
+    <div class="row work">
+      <div class="three columns header-col">
+        <h1><span>Clearance</span></h1>
       </div>
       <div class="nine columns main-col">
-        <h2>ABOUT ME</h2>
-        <p>
-          I’m Zac Stevens — a Cybersecurity Technologist, retired U.S. Marine Chief Warrant Officer, and Microsoft Fellow. Over 20 years of experience leading cross-functional cyber teams, managing enterprise risk, and modernizing digital systems in high-impact operational environments.
-          <br><br>
-          I built this resume site as part of the Cloud Resume Challenge to demonstrate my ability to deploy cloud-native, secure, automated solutions. The site is hosted via Azure Static Web Apps, integrated with serverless Azure Functions and Cosmos DB, and version-controlled through GitHub Actions CI/CD.
-        </p>
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>TS/SCI with CI Polygraph</h3>
+            <p class="info"><em class="date">Active</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Certifications with Badges -->
+<div class="row education">
+  <div class="three columns header-col">
+    <h1><span>Certifications</span></h1>
+  </div>
+  <div class="nine columns main-col">
+
+    <div class="row item cert-item">
+      <div class="twelve columns">
+        <a href="https://www.certmetrics.com/comptia/public/verification.aspx?code=57WKH0598796VZ3R" target="_blank">
+          <img src="images/securityx.png" alt="SecurityX Badge" class="cert-img">
+        </a>
+        <div>
+          <h3 class="cert-title">CompTIA Certified: SecurityX</h3>
+          <p class="info cert-expiry"><em class="date">Expires 2028</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row item cert-item">
+      <div class="twelve columns">
+        <a href="https://www.credly.com/badges/3a778939-5cd4-4827-ba3b-9ad5680e0d37/linked_in_profile" target="_blank">
+          <img src="images/google-pm.png" alt="Google PM Badge" class="cert-img">
+        </a>
+        <div>
+          <h3 class="cert-title">Google Certified: Project Management</h3>
+          <p class="info cert-expiry"><em class="date">Expires 2026</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row item cert-item">
+      <div class="twelve columns">
+        <a href="https://learn.microsoft.com/en-us/users/thomaszacstev/credentials/104e1365feef51cf?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">
+          <img src="images/az900.svg" alt="AZ-900 Badge" class="cert-img">
+        </a>
+        <div>
+          <h3 class="cert-title">Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+          <p class="info cert-expiry"><em class="date">Expires 2026</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row item cert-item">
+      <div class="twelve columns">
+        <a href="https://www.credly.com/badges/f0ef7106-f7e5-45b5-a896-bd5dfbbd3665/public_url" target="_blank">
+          <img src="images/CISSP.png" alt="CISSP Badge" class="cert-img">
+        </a>
+        <div>
+          <h3 class="cert-title">CISSP (In Progress)</h3>
+          <p class="info cert-expiry"><em class="date">Expected 2025</em></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    
+    <!-- Work Experience -->
+    <div class="row work">
+      <div class="three columns header-col">
+        <h1><span>Work</span></h1>
+      </div>
+      <div class="nine columns main-col">
+
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>Microsoft</h3>
+            <p class="info">Hiring Our Heroes Fellow – Cyber Cloud Solutions Architect <span>&bull;</span> <em class="date">May 2025 – Present</em></p>
+            <p>
+              <li>Competitively selected by Microsoft Federal for the Hiring Our Heroes Corporate Fellowship Program.</li>
+              <li>Collaborating with architects and product leaders to develop secure, scalable cloud solutions aligned with enterprise mission needs.</li>
+              <li>Gaining insight into Microsoft’s values, culture, and customer engagement strategies across federal markets.</li>
+            </p>
+          </div>
+        </div>
+
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>U.S. Marine Corps Defensive Cyberspace Weapons Officer</h3>
+            <p class="info">Cyber National Mission Force – 83 National Cyber Protection Team <span>&bull;</span> <em class="date">May 2022 – May 2025</em></p>
+            <p>
+              <li>Led enterprise-scale cyber hunt operations, delivering actionable threat intelligence and enhancing AI-informed detection capabilities.</li>
+              <li>Directed a cross-functional team of 40+, driving tailored training and contributing to a first-place Cyber Games 24 victory.</li>
+              <li>Oversaw a $6M platform modernization, integrating automation and AI-powered analytics into frontline cyber operations.</li>
+              <li>Spearheaded Cyber Flag 24—the first bilateral cyber defense exercise hosted on U.S. soil—enhancing strategic partnerships.</li>
+              <li>Launched a force-wide effects-based cyber training program used by thousands of personnel in realistic, tool-integrated environments.</li>
+            </p>
+          </div>
+        </div>
+
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>U.S. Marine Corps Cyberspace Operations Lead</h3>
+            <p class="info">Marine Corps Forces Special Operations Command - Cyberspace Operations Team  <span>&bull;</span> <em class="date">May 2020 – May 2022</em></p>
+            <p>
+              <li>Partnered with interagency leaders to expand access to national cyber training platforms, accelerating team readiness and interoperability.</li>
+              <li>Led incident response efforts during global cyber threats, supporting 15+ units and improving containment and recovery timelines.</li>
+              <li>Shaped force development policy across 5+ units, standardizing training and closing cyber capability gaps.</li>
+              <li>Managed concurrent cyber missions across incident response and hunt teams, driving successful strategic outcomes.</li>
+              <li>Developed and deployed DMSS 2.0 and the Fly Away Toolkit, enhancing rapid deployment of cybersecurity capabilities.</li>
+            </p>
+          </div>
+        <!-- Education -->
+    <div class="row work">
+      <div class="three columns header-col">
+        <h1><span>Education</span></h1>
+      </div>
+      <div class="nine columns main-col">
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>University of Maryland Global Campus</h3>
+            <p class="info">Bachelor of Science in Computer Networks and Cybersecurity <span>&bull;</span> <em class="date">2023</em></p>
+          </div>
+        </div>
+        <div class="row item">
+          <div class="twelve columns">
+            <h3>Central Texas College</h3>
+            <p class="info">Associate of Arts in General Studies <span>&bull;</span> <em class="date">2012</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
       </div>
     </div>
   </section>
-<section id="resume">
-  <!-- Certifications -->
-  <div class="row education">
-    <div class="three columns header-col">
-      <h1><span>Certifications</span></h1>
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="twelve columns">
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/tzac"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; 2025 Zac Stevens | Powered by Azure & GitHub</li>
+        </ul>
+      </div>
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
     </div>
-    <div class="nine columns main-col">
-      <div class="row item"><div class="twelve columns">
-        <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
-        <p class="info"><em class="date">2025</em></p>
-      </div></div>
-      <div class="row item"><div class="twelve columns">
-        <h3>CompTIA Security+ / Network+ / SecurityX</h3>
-        <p class="info"><em class="date">2015 – 2025</em></p>
-      </div></div>
-      <div class="row item"><div class="twelve columns">
-        <h3>CISSP (In Progress)</h3>
-        <p class="info"><em class="date">Expected 2025</em></p>
-      </div></div>
-    </div>
-  </div>
+  </footer>
 
-  <!-- Work Experience -->
-  <div class="row work">
-    <div class="three columns header-col">
-      <h1><span>Work</span></h1>
-    </div>
-    <div class="nine columns main-col">
-
-      <div class="row item"><div class="twelve columns">
-        <h3>Microsoft</h3>
-        <p class="info">Cyber Cloud Solutions Architect Fellow <span>&bull;</span> <em class="date">May 2025 – Present</em></p>
-        <p>
-          <li>Selected for the Hiring Our Heroes Fellowship to support Microsoft Federal cloud initiatives.</li>
-          <li>Working cross-functionally to design secure, scalable, cloud-native architectures.</li>
-        </p>
-      </div></div>
-
-      <div class="row item"><div class="twelve columns">
-        <h3>U.S. Marine Corps – Defensive Cyberspace Weapons Officer</h3>
-        <p class="info">Cyber Hunt Lead, 83 NCPT <span>&bull;</span> <em class="date">2022 – 2025</em></p>
-        <p>
-          <li>Led joint cyber hunt teams during Cyber Flag 24 and multiple real-world missions.</li>
-          <li>Directed AI-integrated threat response efforts across a $6M platform modernization effort.</li>
-        </p>
-      </div></div>
-
-      <div class="row item"><div class="twelve columns">
-        <h3>U.S. Marine Corps – Cyberspace Operations Chief</h3>
-        <p class="info">Quantico & Camp Lejeune <span>&bull;</span> <em class="date">2016 – 2022</em></p>
-        <p>
-          <li>Standardized cyber readiness training across 5+ units.</li>
-          <li>Responded to real-world cyber incidents supporting 15+ globally deployed units.</li>
-        </p>
-      </div></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="row">
-    <div class="twelve columns">
-      <ul class="social-links">
-        <li><a href="https://www.linkedin.com/in/tzac"><i class="fa fa-linkedin"></i></a></li>
-      </ul>
-      <ul class="copyright">
-        <li>&copy; 2025 Zac Stevens | Powered by Azure & GitHub</li>
-      </ul>
-    </div>
-    <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-  </div>
-</footer>
-
-<!-- JavaScript -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/waypoints.js"></script>
-<script src="js/jquery.fittext.js"></script>
-<script src="js/magnific-popup.js"></script>
-<script src="js/init.js"></script>
+  <!-- JavaScript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script src="js/waypoints.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>

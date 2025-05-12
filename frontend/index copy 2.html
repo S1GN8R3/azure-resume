@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas "Zac" Stevens | Cybersecurity Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f2f3f7;
+      color: #222;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .toast {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      z-index: 10;
+      position: relative;
+      max-width: 400px;
+      animation: fadeInUp 1s ease;
+    }
+    .toast h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .toast h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #666;
+      margin-top: 10px;
+    }
+    .counter {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .badge-float {
+      position: absolute;
+      width: 100px;
+      opacity: 0.95;
+    }
+    .badge-float.google { top: 10%; left: 10%; }
+    .badge-float.az900 { top: 15%; right: 12%; }
+    .badge-float.securityx { bottom: 15%; left: 15%; }
+    .badge-float.cissp { bottom: 10%; right: 10%; }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #aaa;
+      width: 100%;
+      text-align: center;
+    }
+    @keyframes fadeInUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Cert Badges -->
+  <img class="badge-float google" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/72689159" alt="Google PM Badge">
+  <img class="badge-float az900" src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="AZ-900 Badge">
+  <img class="badge-float securityx" src="https://images.credly.com/size/340x340/images/6e6b8f6f-e7da-4c35-a0e1-d5f87d3de83d/security-essentials.png" alt="SecurityX Badge">
+  <img class="badge-float cissp" src="https://img.icons8.com/ios-filled/100/000000/hourglass.png" alt="CISSP Pending">
+
+  <!-- Center Toast Panel -->
+  <div class="toast">
+    <h1>Thomas Stevens</h1>
+    <h2>You can call me Zac</h2>
+    <div class="counter">This resume has been viewed <span id="visitorCounter">[loading]</span> times</div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Thomas "Zac" Stevens | Powered by Azure Static Web Apps
+  </footer>
+
+  <script>
+    // Simulated fetch for placeholder
+    document.getElementById('visitorCounter').textContent = Math.floor(Math.random() * 1000 + 1);
+  </script>
+</body>
+</html>

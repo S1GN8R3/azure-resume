@@ -33,11 +33,12 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 no-repeat top center;
-   background-size: cover !important;
-	-webkit-background-size: cover !important;
+   background: url("../images/banner.jpg") no-repeat center center fixed;
+   background-size: cover;
+   -webkit-background-size: cover;
    text-align: center;
    overflow: hidden;
+   color: #fff;
 }
 
 /* vertically center banner section */
@@ -235,6 +236,29 @@ ul#nav li.current a { color: #F06000; }
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
 
+.cert-item .twelve.columns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.cert-img {
+  height: 120px;
+  max-width: 120px;
+}
+
+.cert-title {
+  font-size: 1.6em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.cert-expiry {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
 #resume {
    background: #fff;
    padding-top: 90px;
@@ -267,8 +291,8 @@ ul#nav li.current a { color: #F06000; }
    border-bottom: 1px solid #E8E8E8;
 }
 #resume .info {
-   font: 16px/24px 'librebaskerville-italic', serif;
-   color: #6E7881;
+   font: 18px/28px 'librebaskerville-italic', serif;
+   color: #333333;
    margin-bottom: 18px;
    margin-top: 9px;
 }
@@ -1003,4 +1027,10 @@ footer .social-links li:first-child { margin-left: 0; }
  	border-radius: 100%;
 }
 #go-top a:hover { background-color: #0F9095; }
+
+#resume p, #resume li {
+   font-size: 17px;
+   color: #222;
+   line-height: 1.7em;
+}
 
