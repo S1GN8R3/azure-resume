@@ -8,17 +8,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: azure/cli@v1
-      with:
-        inlineScript: |
+      - uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Upload to Static Site
+        run: |
           az storage blob upload-batch \
             --account-name tsazureresumestatic \
             --source frontend/ \
             --destination '$web' \
             --no-progress
-      env:
-        AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION }}
-        AZURE_CLIENT_ID:  ${{ secrets.AZURE_CLIENT_ID }}
-        AZURE_TENANT_ID:  ${{ secrets.AZURE_TENANT_ID }}
-        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+
