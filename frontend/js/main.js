@@ -1,7 +1,7 @@
 // frontend/js/main.js
 
 // 1️⃣ Replace this with your actual Function URL:
-const functionApi = 'https://<YOUR_FUNCTION_APP>.azurewebsites.net/api/http_trigger';
+const functionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 window.addEventListener('DOMContentLoaded', () => {
   getVisitCount();
