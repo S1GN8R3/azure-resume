@@ -2,25 +2,38 @@ name: Deploy Static Site
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
 
-      - name: Azure Login
+      # 1) Grab your code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2) Login to Azure
+      - name: Azure CLI login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Upload to Static Site
+      # 3) Wipe out the existing files in $web
+      - name: Clean out $web container
+        run: |
+          az storage blob delete-batch \
+            --account-name tsazureresumestatic \
+            --source '$web' \
+            --no-progress
+
+      # 4) Upload only your frontend folder
+      - name: Upload frontend to $web
         run: |
           az storage blob upload-batch \
-          --account-name tsazureresumestatic \
-          --source frontend/ \
-          --destination '$web' \
-          --pattern "*" \
-          --no-progress
-
+            --account-name tsazureresumestatic \
+            --source frontend/ \
+            --destination '$web' \
+            --pattern "*" \
+            --no-progress
