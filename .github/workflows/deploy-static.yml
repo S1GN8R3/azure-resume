@@ -8,32 +8,39 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
 
-      # 1) Grab your code
-      - name: Checkout repository
+    steps:
+      # 1) checkout your repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2) Login to Azure
+      # 2) login to Azure
       - name: Azure CLI login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # 3) Wipe out the existing files in $web
-      - name: Clean out $web container
+      # 3) retrieve the storage connection string and expose it to subsequent steps
+      - name: Get Storage connection string
+        id: conn
+        run: |
+          connstr=$(az storage account show-connection-string \
+            --resource-group azureresume \
+            --name tsazureresumestatic \
+            --query connectionString -o tsv)
+          echo "AZURE_STORAGE_CONNECTION_STRING=$connstr" >> $GITHUB_ENV
+
+      # 4) optionally clear out old blobs from $web
+      - name: Clean $web container
         run: |
           az storage blob delete-batch \
-            --account-name tsazureresumestatic \
             --source '$web' \
             --no-progress
 
-      # 4) Upload only your frontend folder
+      # 5) upload your frontend folder
       - name: Upload frontend to $web
         run: |
           az storage blob upload-batch \
-            --account-name tsazureresumestatic \
             --source frontend/ \
             --destination '$web' \
-            --pattern "*" \
             --no-progress
