@@ -18,8 +18,9 @@ jobs:
       - name: Upload to Static Site
         run: |
           az storage blob upload-batch \
-            --account-name tsazureresumestatic \
-            --source frontend/ \
-            --destination '$web' \
-            --no-progress
+          --account-name tsazureresumestatic \
+          --source frontend/ \
+          --destination '$web' \
+          --pattern "*" \
+          --no-progress
 
