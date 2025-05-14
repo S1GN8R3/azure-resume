@@ -1,4 +1,4 @@
-name: Deploy Static Site + API
+name: Azure Static Web Apps CI/CD
 
 on:
   push:
@@ -6,28 +6,21 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy Static Site + API
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) checkout your repo
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2) Deploy front-end + API to Azure Static Web Apps
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token:                   ${{ secrets.GITHUB_TOKEN }}
-          action:                       upload
-
-          # —— FRONTEND (already built) ——
-          skip_app_build:   true
-          app_location:     frontend
-          output_location:  frontend
-
-          # —— API (Functions) ——
-          skip_api_build:   false
-          api_location:     swa-db-connections
+          action:                       "upload"
+          skip_app_build:               true           # skip front-end build if files are ready
+          app_location:                 "/"            # where your index.html lives
+          output_location:              "/"            # same as app_location
+          skip_api_build:               false          # build your Functions
+          api_location:                 "swa-db-connections"  # your API folder
