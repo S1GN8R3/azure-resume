@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          submodules: false       
 
       - name: Build And Deploy to SWA
         uses: Azure/static-web-apps-deploy@v1
@@ -30,7 +32,7 @@ jobs:
           skip_app_build:   true
           app_location:     frontend
           output_location:  frontend
-
+          
           # —— API (Functions) ——  
           skip_api_build:   false
           api_location:     backend
