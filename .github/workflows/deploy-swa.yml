@@ -1,63 +1,41 @@
-name: Azure Static Web Apps CI/CD
+name: Deploy to Azure Static Web Apps via CLI
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [ main ]
 
 jobs:
-  build_and_deploy_job:
+  deploy:
     runs-on: ubuntu-latest
-
-    # Disable all git‐submodule logic in the SWA action
-    env:
-      AZURE_STATIC_WEB_APPS_DISABLE_GIT_SUBMODULES: true
-
     steps:
-      - name: Checkout code
+
+      # 1) Checkout your repo
+      - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: false
 
-      - name: Fix phantom submodule
+      # 2) Login to Azure with your service principal
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # 3) Deploy frontend & API via CLI
+      - name: Deploy Static Web App
+        shell: bash
         run: |
-          rm -f .gitmodules
-          rm -rf azure-resume
+          az staticwebapp upload \
+            --name tzac-static-app \
+            --resource-group tzac-rg \
+            --source frontend/ \
+            --api-location backend/ \
+            --no-fail-on-empty-changes
 
-      - name: Build And Deploy to SWA
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token:                ${{ secrets.GITHUB_TOKEN }}
-          action:                    upload
-          skip_app_build:            true
-          app_location:              frontend
-          output_location:           frontend
-          skip_api_build:            false
-          api_location:              backend
-
-  close_pull_request_job:
-    runs-on: ubuntu-latest
-
-    # Also disable submodules here
-    env:
-      AZURE_STATIC_WEB_APPS_DISABLE_GIT_SUBMODULES: true
-
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    steps:
-      - name: Close PR
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: close          
-          repo_token: ${{ secrets.GITHUB_TOKEN }}       
-          skip_app_build: true
-          skip_api_build: true
-          app_location: frontend
-          output_location: frontend   
-          api_location: backend
-          
-
+      # 4) (Optional) Show the default hostname
+      - name: Show SWA URL
+        run: |
+          echo "Your site is live at:"
+          az staticwebapp show \
+            --name tzac-static-app \
+            --resource-group tzac-rg \
+            --query defaultHostname \
+            -o tsv
