@@ -1,5 +1,8 @@
-﻿name: build_and_deploy
-on: [push]
+﻿name: Build and Deploy SWA
+
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build_and_deploy:
@@ -7,21 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Build Frontend
+        working-directory: ./frontend
+        run: |
+          npm ci
+          npm run build
+
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Build Frontend (Vite)
-        working-directory: frontend
-        run: |
-          npm install
-          npm run build
 
       - name: Deploy to Static Web App
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "upload"
-          app_location: "frontend"        # folder with your Vite build
-          api_location: "api"             # folder with your Azure Functions
-          output_location: "frontend/dist"  
+          action: "upload"              # ← this tells the action to do an upload deploy
+          app_location: "/"      # your React app folder
+          api_location: "backend"       # your Functions folder
+          output_location: "frontend/build"
