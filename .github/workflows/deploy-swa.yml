@@ -5,28 +5,37 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js 18
-        uses: actions/setup-node@v3
+      - uses: azure/login@v1
         with:
-          node-version: '18'
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Install & build
-        working-directory: frontend
+      - name: Build your app
         run: |
-          npm ci
+          npm install
           npm run build
 
-      - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1     # <-- EXACTLY this
+      - name: Deploy to Static Web App
+        uses: Azure/static-web-apps-deploy@v1
         with:
+          # 1) Your SWA deployment token
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "upload" 
-          app_location: frontend
-          app_artifact_location: frontend/build
-          skip_app_build: true
+
+          # 2) GitHub repo token (always GITHUB_TOKEN)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # 3) What to do: upload your build
+          action: upload
+
+          # 4) Where your app lives
+          app_location: "/"
+
+          # 5) No Functions folder in this repo
+          api_location: ""
+
+          # 6) Where your build output lands
+          output_location: "build"
