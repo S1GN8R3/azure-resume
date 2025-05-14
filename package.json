@@ -1,0 +1,23 @@
+{
+  "name": "azure-resume",
+  "version": "1.0.0",
+  "description": "- [GitHub account](https://github.com/join)\r - [Azure account](https://azure.microsoft.com/en-us/free)\r - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)\r - [.NET Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet/3.1)\r - [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#install-the-azure-functions-core-tools)\r - [Visual Studio Code](https://code.visualstudio.com)\r - [Visual Code Extensions](https://code.visualstudio.com/docs/introvideos/extend)\r   - [Azure Functions Extensions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)\r   - [C# Extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)\r   - [Azure Storage Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage)\r - [Full solution](https://github.com/ACloudGuru-Resources/acg-project-azure-resume)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S1GN8R3/azure-resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S1GN8R3/azure-resume/issues"
+  },
+  "homepage": "https://github.com/S1GN8R3/azure-resume#readme"
+}

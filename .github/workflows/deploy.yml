@@ -1,9 +1,5 @@
-﻿name: Build & Deploy to Azure Static Web Apps
-
-on:
-  push:
-    branches:
-      - main
+﻿name: build_and_deploy
+on: [push]
 
 jobs:
   build_and_deploy:
@@ -15,7 +11,8 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Build your app
+      - name: Build Frontend (Vite)
+        working-directory: frontend
         run: |
           npm install
           npm run build
@@ -24,6 +21,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: upload
-          app_location: "/"            # adjust if your code lives somewhere else
-          output_location: "build"     # adjust if your build goes to a different folder
+          action: "upload"
+          app_location: "frontend"        # folder with your Vite build
+          api_location: "api"             # folder with your Azure Functions
+          output_location: "frontend/dist"  
