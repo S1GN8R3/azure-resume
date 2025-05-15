@@ -408,33 +408,33 @@ ul#nav li a {
 #about .profile-pic {
   position: relative;
   width: 100%;
-  max-width: 150px; /* Capped max width */
+  max-width: 150px; /* This ensures the image doesn't stretch */
   height: auto;
   margin: 0 auto;
   display: block;
-  border-radius: 100%; /* Circular shape */
+  border-radius: 100%; /* Makes the image round */
 }
 
-/* Mobile Optimization for Portrait and Landscape */
+/* Portrait and Landscape Optimization */
 @media screen and (max-width: 768px) {
-  /* Mobile Portrait: Center the image at the top */
+  /* Profile Picture on Mobile */
   #about .profile-pic {
-    width: 80%;  /* Ensure it uses 80% of the container's width */
+    width: 80%; /* Ensure it uses 80% of the container's width */
     max-width: 150px; /* Optional: Set a max-width for smaller screens */
     height: auto;
     margin: 0 auto;
     display: block;
   }
 
-  /* Portrait Mode: For Mobile Portrait Orientation */
+  /* Portrait Mode - For Mobile Portrait Orientation */
   @media screen and (orientation: portrait) {
     #about .profile-pic {
-      width: 100%; /* Ensure the image uses full container width in portrait */
+      width: 100%; /* Use full container width in portrait mode */
       max-width: 150px; /* Optional: Max size */
     }
   }
 
-  /* Landscape Mode: For Mobile Landscape Orientation */
+  /* Landscape Mode - For Mobile Landscape Orientation */
   @media screen and (orientation: landscape) {
     #about .profile-pic {
       width: 100%; /* Adjust width for landscape */
@@ -452,7 +452,6 @@ ul#nav li a {
     margin: 0 auto;
   }
 }
-
 
 /* Skill Bar Animations (No Changes) */
 .photoshop {
