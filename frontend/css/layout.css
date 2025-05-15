@@ -389,6 +389,14 @@ ul#nav li.current a { color: #F06000; }
    line-height: 42px;
    border-radius: 3px 0 0 3px;
 }
+/* Mobile Optimization for Profile Image */
+#about .profile-pic {
+    width: 100%;
+    max-width: 200px; /* You can adjust this size */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
 
 .photoshop {
   	width: 60%;
