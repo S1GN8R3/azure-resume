@@ -192,8 +192,8 @@ ul#nav li a {
   }
 
   #about .profile-pic {
-    width: 100%;
-    max-width: 200px;
+    width: 100%;  /* Full width on mobile */
+    max-width: 150px;  /* Limit max size on mobile */
     height: auto;
     margin: 0 auto;
     display: block;
@@ -217,8 +217,18 @@ ul#nav li a {
   #resume .info {
     font-size: 16px;
   }
+  
 }
-
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+   #about .profile-pic {
+      width: 100%;
+      max-width: 150px; /* Adjust as needed */
+      height: auto;
+      margin: 0 auto;
+      display: block;
+   }
+}
 
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
@@ -396,6 +406,15 @@ ul#nav li.current a { color: #F06000; }
     height: auto;
     margin: 0 auto;
     display: block;
+
+   }
+#about .profile-pic {
+   position: relative;
+   width: 100%; /* This makes the image fill the container */
+   max-width: 200px; /* Set a max-width to avoid stretching on large screens */
+   height: auto; /* Maintain aspect ratio */
+   margin: 0 auto;
+   display: block;
 }
 
 .photoshop {
