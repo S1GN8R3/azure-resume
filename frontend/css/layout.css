@@ -217,7 +217,6 @@ ul#nav li a {
   #resume .info {
     font-size: 16px;
   }
-  
 }
 /* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
@@ -400,6 +399,42 @@ ul#nav li.current a { color: #F06000; }
    border-radius: 3px 0 0 3px;
 }
 /* Mobile Optimization for Profile Image */
+/* General Styles */
+body {
+   background: #0f0f0f;
+}
+
+/* Other sections like header, resume, portfolio, etc. */
+
+/* Mobile Optimization for Portrait and Landscape */
+@media screen and (max-width: 768px) {
+
+  /* Profile Picture on Mobile */
+  #about .profile-pic {
+    width: 90%; /* Ensure it uses 90% of the container's width */
+    max-width: 200px; /* Optional: Set a max-width */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Portrait Mode - For Mobile Portrait Orientation */
+  @media screen and (orientation: portrait) {
+    #about .profile-pic {
+      width: 80%; /* Adjust width for portrait */
+      max-width: 150px;
+    }
+  }
+
+  /* Landscape Mode - For Mobile Landscape Orientation */
+  @media screen and (orientation: landscape) {
+    #about .profile-pic {
+      width: 100%; /* Adjust width for landscape */
+      max-width: 250px; /* Optional: Make the image larger in landscape */
+    }
+  }
+}
+
 #about .profile-pic {
     width: 100%;
     max-width: 200px; /* You can adjust this size */
