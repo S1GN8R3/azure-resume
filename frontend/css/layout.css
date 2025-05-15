@@ -404,44 +404,43 @@ ul#nav li a {
    line-height: 42px;
    border-radius: 3px 0 0 3px;
 }
-/* Mobile Optimization for Profile Image */
+/* General Profile Picture Styles */
 #about .profile-pic {
-  position: relative;
-  width: 100%;
-  max-width: 150px; /* This ensures the image doesn't stretch */
-  height: auto;
-  margin: 0 auto;
-  display: block;
-  border-radius: 100%; /* Makes the image round */
-}
-
-/* Portrait and Landscape Optimization */
-@media screen and (max-width: 768px) {
-  /* Profile Picture on Mobile */
-  #about .profile-pic {
-    width: 80%; /* Ensure it uses 80% of the container's width */
-    max-width: 150px; /* Optional: Set a max-width for smaller screens */
+    position: relative;
+    width: 100%;
+    max-width: 200px;
     height: auto;
     margin: 0 auto;
     display: block;
+    border-radius: 100%; /* Ensure it’s circular */
+}
+
+/* Mobile-Specific Styles for Portrait & Landscape */
+@media screen and (max-width: 768px) {
+
+  /* Flexbox Adjustment for About Section */
+  #about .row {
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Portrait Mode - For Mobile Portrait Orientation */
+  /* Profile Picture in Portrait Mode */
   @media screen and (orientation: portrait) {
     #about .profile-pic {
-      width: 100%; /* Use full container width in portrait mode */
-      max-width: 150px; /* Optional: Max size */
+      width: 100%; /* Use full width in portrait mode */
+      max-width: 150px; /* Keep it smaller for portrait */
     }
   }
 
-  /* Landscape Mode - For Mobile Landscape Orientation */
+  /* Profile Picture in Landscape Mode */
   @media screen and (orientation: landscape) {
     #about .profile-pic {
-      width: 100%; /* Adjust width for landscape */
-      max-width: 250px; /* Optional: Make the image larger in landscape */
+      width: 100%; /* Use full width in landscape mode */
+      max-width: 250px; /* Optional: Allow for a larger image in landscape */
     }
   }
 }
+
 
 /* Larger Screens and Tablets */
 @media screen and (min-width: 769px) {
