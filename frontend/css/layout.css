@@ -417,29 +417,30 @@ body {
 
   /* Profile Picture on Mobile */
   #about .profile-pic {
-    width: 90%; /* Ensure it uses 90% of the container's width */
-    max-width: 200px; /* Optional: Set a max-width */
+    width: 80%; /* Ensure it uses 80% of the container's width */
+    max-width: 150px; /* Optional: Set a max-width for smaller screens */
     height: auto;
     margin: 0 auto;
     display: block;
   }
-}
 
-/* Portrait Mode - For Mobile Portrait Orientation */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-  #about .profile-pic {
-    width: 80%; /* Adjust width for portrait */
-    max-width: 150px; /* Optional: Set a max width for portrait */
+  /* Portrait Mode - For Mobile Portrait Orientation */
+  @media screen and (orientation: portrait) {
+    #about .profile-pic {
+      width: 100%; /* Ensure the image uses full container width in portrait */
+      max-width: 200px; /* Optional: Max size */
+    }
+  }
+
+  /* Landscape Mode - For Mobile Landscape Orientation */
+  @media screen and (orientation: landscape) {
+    #about .profile-pic {
+      width: 100%; /* Adjust width for landscape */
+      max-width: 250px; /* Optional: Make the image larger in landscape */
+    }
   }
 }
 
-/* Landscape Mode - For Mobile Landscape Orientation */
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  #about .profile-pic {
-    width: 100%; /* Adjust width for landscape */
-    max-width: 250px; /* Optional: Make the image larger in landscape */
-  }
-}
 Sig
 
 #about .profile-pic {
