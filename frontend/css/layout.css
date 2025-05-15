@@ -300,14 +300,15 @@ ul#nav li a {
 }
 
 .cert-img {
-  height: 120px;
-  max-width: 120px;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .cert-title {
-  font-size: 1.6em;
-  margin: 0;
-  font-weight: 700;
+  font-size: 1.2em;
+  margin-top: 5px;
 }
 
 .cert-expiry {
