@@ -408,17 +408,17 @@ ul#nav li a {
 #about .profile-pic {
     position: relative;
     width: 100%;
-    max-width: 200px;
+    max-width: 200px; /* Set the max-width */
     height: auto;
     margin: 0 auto;
     display: block;
-    border-radius: 100%; /* Ensure it’s circular */
+    border-radius: 100%; /* Circular image */
 }
 
 /* Mobile-Specific Styles for Portrait & Landscape */
 @media screen and (max-width: 768px) {
 
-  /* Flexbox Adjustment for About Section */
+  /* Adjust About Section Layout for Smaller Screens */
   #about .row {
     flex-direction: column;
     align-items: center;
@@ -428,7 +428,8 @@ ul#nav li a {
   @media screen and (orientation: portrait) {
     #about .profile-pic {
       width: 100%; /* Use full width in portrait mode */
-      max-width: 150px; /* Keep it smaller for portrait */
+      max-width: 150px; /* Adjust max-width */
+      margin: 10px 0; /* Add some margin for spacing */
     }
   }
 
@@ -436,10 +437,11 @@ ul#nav li a {
   @media screen and (orientation: landscape) {
     #about .profile-pic {
       width: 100%; /* Use full width in landscape mode */
-      max-width: 250px; /* Optional: Allow for a larger image in landscape */
+      max-width: 200px; /* Larger max-width for landscape */
     }
   }
 }
+
 
 
 /* Larger Screens and Tablets */
