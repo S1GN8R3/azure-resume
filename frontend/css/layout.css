@@ -191,6 +191,7 @@ ul#nav li a {
     max-width: 100%;
   }
 
+  /* Mobile-specific adjustments for profile image */
   #about .profile-pic {
     width: 100%;  /* Full width on mobile */
     max-width: 150px;  /* Limit max size on mobile */
@@ -199,6 +200,7 @@ ul#nav li a {
     display: block;
   }
 
+  /* Mobile row adjustments */
   .row {
     flex-direction: column;
   }
@@ -218,25 +220,24 @@ ul#nav li a {
     font-size: 16px;
   }
 }
-/* Mobile-specific adjustments */
-@media screen and (max-width: 768px) {
-   #about .profile-pic {
-      width: 100%;
-      max-width: 150px; /* Adjust as needed */
-      height: auto;
-      margin: 0 auto;
-      display: block;
-   }
+
+/* Specific Mobile Portrait Adjustments */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  #about .profile-pic {
+    width: 100%;  /* Adjust width for portrait */
+    max-width: 150px;  /* Keep max-width smaller for portrait */
+  }
 }
 
-ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+/* Specific Mobile Landscape Adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #about .profile-pic {
+    width: 100%;  /* Full width for landscape */
+    max-width: 250px;  /* Allow larger size in landscape */
+  }
+}
 
-
-/* ------------------------------------------------------------------ */
-/* c. About Section
-/* ------------------------------------------------------------------ */
-
+/* About Section */
 #about {
    background: #2B2B2B;
    padding-top: 96px;
@@ -252,36 +253,41 @@ ul#nav li.current a { color: #F06000; }
    color: #fff;
    margin-bottom: 12px;
 }
+
 #about p {
    line-height: 30px;
    color: #7A7A7A;
 }
+
 #about .profile-pic {
    position: relative;
    width: 120px;
    height: 120px;
    border-radius: 100%;
 }
+
 #about .contact-details { width: 41.66667%; }
 #about .download {
    width: 58.33333%;
    padding-top: 6px;
 }
+
 #about .main-col { padding-right: 5%; }
+
 #about .download .button {
    margin-top: 6px;
    background: #444;
 }
+
 #about .download .button:hover {
    background: #fff;
    color: #2B2B2B;
 }
+
 #about .download .button i {
    margin-right: 15px;
    font-size: 20px;
 }
-
-
 /* ------------------------------------------------------------------ */
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
