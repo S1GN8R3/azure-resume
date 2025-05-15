@@ -407,90 +407,82 @@ ul#nav li a {
 /* Mobile Optimization for Profile Image */
 /* General Styles */
 body {
-   background: #0f0f0f;
+    background: #0f0f0f;
 }
 
-/* Other sections like header, resume, portfolio, etc. */
-
-/* Mobile Optimization for Portrait and Landscape */
-@media screen and (max-width: 768px) {
-
-  /* Profile Picture on Mobile */
-  #about .profile-pic {
-    width: 80%; /* Ensure it uses 80% of the container's width */
-    max-width: 150px; /* Optional: Set a max-width for smaller screens */
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  /* Portrait Mode - For Mobile Portrait Orientation */
-  @media screen and (orientation: portrait) {
-    #about .profile-pic {
-      width: 100%; /* Ensure the image uses full container width in portrait */
-      max-width: 200px; /* Optional: Max size */
-    }
-  }
-
-  /* Landscape Mode - For Mobile Landscape Orientation */
-  @media screen and (orientation: landscape) {
-    #about .profile-pic {
-      width: 100%; /* Adjust width for landscape */
-      max-width: 250px; /* Optional: Make the image larger in landscape */
-    }
-  }
-}
-
-Sig
-
+/* Profile Picture */
 #about .profile-pic {
+    position: relative;
     width: 100%;
     max-width: 200px; /* You can adjust this size */
     height: auto;
     margin: 0 auto;
     display: block;
-Si
-   }
-#about .profile-pic {
-   position: relative;
-   width: 100%; /* This makes the image fill the container */
-   max-width: 200px; /* Set a max-width to avoid stretching on large screens */
-   height: auto; /* Maintain aspect ratio */
-   margin: 0 auto;
-   display: block;
+    border-radius: 100%; /* Circular shape */
 }
 
+/* Mobile Optimization for Portrait and Landscape */
+@media screen and (max-width: 768px) {
+
+    /* Profile Picture on Mobile */
+    #about .profile-pic {
+        width: 80%;  /* Ensure it uses 80% of the container's width */
+        max-width: 150px; /* Optional: Set a max-width for smaller screens */
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Portrait Mode - For Mobile Portrait Orientation */
+    @media screen and (orientation: portrait) {
+        #about .profile-pic {
+            width: 100%; /* Ensure the image uses full container width in portrait */
+            max-width: 200px; /* Optional: Max size */
+        }
+    }
+
+    /* Landscape Mode - For Mobile Landscape Orientation */
+    @media screen and (orientation: landscape) {
+        #about .profile-pic {
+            width: 100%; /* Adjust width for landscape */
+            max-width: 250px; /* Optional: Make the image larger in landscape */
+        }
+    }
+}
+
+/* Skill Bar Animations (No Changes) */
 .photoshop {
-  	width: 60%;
-  	-moz-animation: photoshop 2s ease;
-  	-webkit-animation: photoshop 2s ease;
+    width: 60%;
+    -moz-animation: photoshop 2s ease;
+    -webkit-animation: photoshop 2s ease;
 }
 .illustrator {
-  	width: 55%;
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
+    width: 55%;
+    -moz-animation: illustrator 2s ease;
+    -webkit-animation: illustrator 2s ease;
 }
 .wordpress {
-  	width: 50%;
-  	-moz-animation: wordpress 2s ease;
-  	-webkit-animation: wordpress 2s ease;
+    width: 50%;
+    -moz-animation: wordpress 2s ease;
+    -webkit-animation: wordpress 2s ease;
 }
 .css {
-  	width: 90%;
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
+    width: 90%;
+    -moz-animation: css 2s ease;
+    -webkit-animation: css 2s ease;
 }
 .html5 {
-  	width: 80%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
+    width: 80%;
+    -moz-animation: html5 2s ease;
+    -webkit-animation: html5 2s ease;
 }
 .jquery {
-  	width: 50%;
-  	-moz-animation: jquery 2s ease;
-  	-webkit-animation: jquery 2s ease;
+    width: 50%;
+    -moz-animation: jquery 2s ease;
+    -webkit-animation: jquery 2s ease;
 }
 
+/* Keyframe Animations */
 @-moz-keyframes photoshop {
   0%   { width: 0px;  }
   100% { width: 60%;  }
