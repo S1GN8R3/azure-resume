@@ -1,35 +1,26 @@
-// frontend/js/main.js
-
-// 1️⃣ Replace this with your actual Function URL:
-const functionApi = "https://tsazureresumefunc.azurewebsites.net/api/getresumecounter?code=k85Aa-eDEn0eGgBOIEKg-p2lHO3O8IQEqHzJ-Mwr_CjrAzFu1biK6Q%3D%3D";
-
-window.addEventListener('DOMContentLoaded', () => {
-  getVisitCount();
-});
-
-function getVisitCount() {
-  // (optional) show a loader or default
-  let count = '…';
-  document.getElementById('counter').innerText = count;
-
-  fetch(functionApi, {
-    method: 'POST'
-  })
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();         // if your function returns JSON like { count: 123 }
-      // return response.text();      // alternatively, if it returns plain text
-    })
-    .then(data => {
-      console.log('Function returned:', data);
-      // if JSON:  
-      count = data.count;
-      // if text:  
-      // count = data;
-      document.getElementById('counter').innerText = count;
-    })
-    .catch(err => {
-      console.error('Visitor counter error:', err);
-      document.getElementById('counter').innerText = '—';
+// Azure resume visitor counter. Public API only; no Function or Cosmos key.
+const resumeCounterApi = 'https://tzac-resume-v2-99e0fcaa.azurewebsites.net/api';
+window.addEventListener('DOMContentLoaded', getVisitCount);
+async function getVisitCount() {
+  const element = document.getElementById('counter');
+  if (!element) return;
+  element.textContent = '…';
+  try {
+    const response = await fetch(resumeCounterApi + '/RecordResumeVisit', {
+      method: 'POST', credentials: 'include', cache: 'no-store'
     });
+    if (!response.ok) throw new Error('Visit endpoint HTTP ' + response.status);
+    const data = await response.json();
+    if (!Number.isSafeInteger(data.count) || data.count < 0) throw new Error('Invalid count');
+    element.textContent = String(data.count);
+  } catch (error) {
+    console.warn('Visitor event unavailable; trying read-only count', error);
+    try {
+      const response = await fetch(resumeCounterApi + '/GetResumeCount', {cache:'no-store'});
+      if (!response.ok) throw new Error('Read endpoint HTTP ' + response.status);
+      const data = await response.json();
+      if (!Number.isSafeInteger(data.count) || data.count < 0) throw new Error('Invalid count');
+      element.textContent = String(data.count);
+    } catch (_) { element.textContent = 'N/A'; }
+  }
 }
